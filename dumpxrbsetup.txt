@@ -1,0 +1,142 @@
+-- MySQL dump 10.13  Distrib 5.7.19, for Win64 (x86_64)
+--
+-- Host: localhost    Database: myob2018194906
+-- ------------------------------------------------------
+-- Server version	5.7.19-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `XRBSetup`
+--
+
+DROP TABLE IF EXISTS `XRBSetup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `XRBSetup` (
+  `ActivateARContracts` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `ActivityBillingEnabled` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `AutoCreateContracts` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `AutoGenDescrOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `AutoGenIncDates` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `AutoRenewStatus` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingActivity` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `BillingActNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingProfNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BureauRptExportFile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BureauRptID` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CMSOTypeID` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `CompanyID` int(11) NOT NULL DEFAULT '0',
+  `ContractCtrlDefSched` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `ContractNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CopyCustOrdNbr` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `CopyPerPetNotes` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `CreatedByID` char(36) CHARACTER SET ascii NOT NULL COMMENT 'sy_guid;',
+  `CreatedByScreenID` char(8) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `CreatedDateTime` datetime NOT NULL COMMENT 'sy_smalldate;',
+  `DefSchedDelay` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `DefSchedDelayDay` smallint(6) NOT NULL,
+  `DepositReqOpenOpt` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `DfltARCustomerID` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `DfltBillingFreq` smallint(6) NOT NULL,
+  `DfltDepositInventoryID` int(11) DEFAULT NULL,
+  `DfltDestSiteID` int(11) DEFAULT NULL,
+  `DfltOrdType` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `DfltQuickClassID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DfltRenewalPriceMthd` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `DfltRenewalPricePct` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `DfltRSOTypeId` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `DfltSalesPersonID` tinyint(1) DEFAULT NULL COMMENT 'sy_boolean;',
+  `DfltSOTypeId` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `DfltTermsBackOff` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `DfltTransferLocOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `EmailCustOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `EquifaxProgID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ExperianProgID` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `InitMode` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `InnovisProgID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `InvoiceCustOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `InvoiceDateMthd` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `LastModifiedByID` char(36) CHARACTER SET ascii DEFAULT NULL COMMENT 'sy_guid;',
+  `LastModifiedByScreenID` char(8) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `LastModifiedDateTime` datetime NOT NULL COMMENT 'sy_smalldate;',
+  `MeterNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MicroBiltProgID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MSANumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OneOccurOneTime` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `PopulateDescrOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `PromiseNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `QuickEntryNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `RenewNoticeDays` smallint(6) NOT NULL DEFAULT '0',
+  `RevenueActNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `RevSchedAct` tinyint(1) DEFAULT NULL COMMENT 'sy_boolean;',
+  `SyncRenewalUOM` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `TrustNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `UnbilledARAccountID` int(11) DEFAULT NULL,
+  `UnbilledARSubID` int(11) DEFAULT NULL,
+  `tstamp` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `DfltContractType` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `DfltContrInt` smallint(6) DEFAULT NULL,
+  `DfltContrLen` smallint(6) DEFAULT NULL,
+  `DfltRenewDays` smallint(6) DEFAULT NULL,
+  `LastContractID` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `AdjPerDfltMthd` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `AlwaysCrtDist` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `ChargeCard` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `ClearPayMthdConsecSoft` smallint(6) NOT NULL,
+  `ClearPayMthdHardDecline` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `CloseExpiredContract` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `DefCodeDfltMthd` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `DfltContrClassID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FCastOMSlsAcct` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `GenEmail` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `LastFCastBuild` datetime DEFAULT NULL COMMENT 'sy_smalldate;',
+  `LateFeeDays` smallint(6) NOT NULL,
+  `NotesToContract` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `NotesToSO` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `PriceDfltMthd` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `ReplaceVoidLineDflt` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `RevenueActivity` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `RevTypeAction` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `SchedAmtChg` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `SchedBegin` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `SumBill` tinyint(1) NOT NULL COMMENT 'sy_boolean;',
+  `TransUnionProgID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `UpdRenewalOpp` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'sy_boolean;',
+  `VoidDateOption` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `NoteID` char(36) CHARACTER SET ascii DEFAULT NULL COMMENT 'sy_guid;',
+  `UsrMAKLAssetNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `UsrMAKLAssetSNNumberingID` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`CompanyID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `XRBSetup`
+--
+
+LOCK TABLES `XRBSetup` WRITE;
+/*!40000 ALTER TABLE `XRBSetup` DISABLE KEYS */;
+INSERT INTO `XRBSetup` VALUES (0,0,0,'C',0,'R',0,NULL,NULL,NULL,NULL,NULL,-100030003,1,'CONTRACT',1,1,'61d858b3-a7ec-429f-ab19-881d04a6ba44','XB101000','2019-01-14 05:00:00',0,15,'I',0,31,NULL,7,'AR',NULL,'O',2.500000,NULL,0,NULL,0,'U','A',NULL,NULL,1,NULL,'A','G','61d858b3-a7ec-429f-ab19-881d04a6ba44','XB101000','2019-07-04 00:56:00',NULL,NULL,NULL,0,'N','MQPAYMENT','MQQUICKCNT',0,NULL,0,1,NULL,NULL,NULL,'2019-07-08 07:19:58.724024','P',31,15,60,NULL,'E',0,'C',0,0,1,'I',NULL,'IN',NULL,NULL,0,1,1,'O',1,0,NULL,0,0,0,NULL,0,'E','951b4c3c-b917-e911-a9aa-8e829b92c0e2','ASSET','ASSETSN'),(0,0,0,'C',0,'R',0,NULL,NULL,NULL,NULL,NULL,3,1,'CONTRACT',1,1,'61d858b3-a7ec-429f-ab19-881d04a6ba44','XB101000','2019-01-14 05:00:00',0,15,'I',0,31,NULL,7,'AR',NULL,'O',2.500000,NULL,0,NULL,0,'U','A',NULL,NULL,1,NULL,'A','G','61d858b3-a7ec-429f-ab19-881d04a6ba44','XB101000','2019-07-04 00:56:00',NULL,NULL,NULL,0,'N','MQPAYMENT','MQQUICKCNT',0,NULL,0,1,NULL,NULL,NULL,'2019-07-08 07:22:43.701306','P',31,15,60,NULL,'E',0,'C',0,0,1,'I',NULL,'IN',NULL,NULL,0,1,1,'O',1,0,NULL,0,0,0,NULL,0,'E','951b4c3c-b917-e911-a9aa-8e829b92c0e2','ASSET','ASSETSN');
+/*!40000 ALTER TABLE `XRBSetup` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-08-28 13:12:40
